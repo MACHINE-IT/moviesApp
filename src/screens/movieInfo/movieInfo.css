@@ -1,0 +1,114 @@
+* {
+  margin :0;
+}
+.details {
+  text-align: left;
+}
+
+.leftDetails {
+  width: 20%;
+  text-align: center;
+}
+
+.middleDetails {
+  width: 60%;
+}
+
+.rightDetails {
+  width: 20%;
+}
+
+.marginTop16 {
+  margin-top: 16px;
+}
+
+.centerAlign {
+  text-align: center;
+}
+
+.marginBottom16 {
+  margin-bottom: 16px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.yellow {
+  color: orange;
+  fill: orange;
+  cursor: pointer;
+}
+
+.black {
+  color: none;
+  cursor: pointer;
+}
+
+.trailerContainer {
+  margin: 16px 0px 16px 0px !important;
+}
+
+.gridTileBar {
+  cursor: pointer;
+}
+.gridTileBar:hover {
+  color: red !important;
+}
+
+.back-btn {
+  margin-left: 24px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  height: 24px;
+  cursor: pointer;
+  width: 120px;
+  padding: 2px;
+  border-radius: 5px;
+  background: rgb(90, 88, 88);
+  color: white;
+
+}
+.back-btn:hover {
+  background: rgb(218, 208, 208);
+  color: black;
+}
+
+.flex-containerDetails {
+  display: flex;
+}
+
+.flex-containerDetails>div {
+  margin: 0px 16px;
+}
+
+iframe {
+  width: 100% !important;
+}
+
+@media (max-width: 992px) {
+  .leftDetails {
+    width: 100%;
+    text-align: center;
+  }
+  .middleDetails {
+    width: 90%;
+  }
+  .rightDetails {
+    width: 100%;
+  }
+  .flex-containerDetails {
+    flex-direction: column;
+  }
+  .paddingRight {
+    margin-right: 32px;
+  }
+}
+.back-btn {
+  margin-left: 90px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  height: 24px;
+  cursor: pointer;
+}
+

@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './Home.css';
 import Header from '../../common/Header/Header';
 import genres from '../../common/genres';
 import artists from '../../common/artists';
 //import UpcomingMovies from '../UpcomingMovies/UpcomingMovies';
 import moviesData from '../../common/moviesData';
+import MovieInfo from '../movieInfo/MovieInfo'
 import { withStyles } from '@material-ui/core/styles';
 import { GridList, GridListTile, GridListTileBar, IconButton, Card, CardContent, Typography, FormControl, InputLabel, Input, Select, MenuItem, ListItemText, Checkbox, TextField, Button } from '@material-ui/core'
 import InfoIcon from '@material-ui/icons/Info';
 import { PhotoSizeSelectLargeRounded, VerticalAlignCenter } from '@material-ui/icons';
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 
 const styles = theme => ({
     root: {
@@ -33,7 +36,7 @@ const styles = theme => ({
     formControl: {
         margin: theme.spacing.unit,
         minWidth: 240,
-        maxWidth: 240,
+        maxWidth: 240
     },
     title: {
         color: theme.palette.primary.light,
@@ -48,7 +51,7 @@ class Home extends Component {
             artists: []
         }
     }
-
+    
     movieNameChangeHandler = event => {
         this.setState({ movieName: event.target.value });
     }
@@ -59,7 +62,9 @@ class Home extends Component {
     artistSelectHandler = (e) => {
         this.setState({ artists: e.target.value });
     }
-
+    movieClickedHandler = (movieId) => {
+        ReactDOM.render(<MovieInfo movieId={movieId} />, document.getElementById('root'));
+    }
     render() {
         const { classes } = this.props;
         return (
@@ -80,7 +85,7 @@ class Home extends Component {
                     <div className="left">
                         <GridList cellHeight={350} cols={4} className={classes.gridListMain}>
                             {moviesData.map(movie => (
-                                <GridListTile className="released-movie-grid-item" key={"grid" + movie.id}>
+                                <GridListTile className="released-movie-grid-item" key={"grid" + movie.id} onClick={() => {this.movieClickedHandler(movie.id)}}>
                                     <img src={movie.poster_url} className="movie-poster" alt={movie.title} />
                                     <GridListTileBar
                                         title={movie.title}

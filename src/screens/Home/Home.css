@@ -41,6 +41,10 @@
 .released-movie-grid-item {
     margin: 15px;
 }
+.released-movie-grid-item:hover {
+    border-style: solid;
+    border-color: rgb(132, 138, 212);
+}
 
 @media (max-width: 992px) {
     .flex-container {
